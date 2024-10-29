@@ -2,10 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Title</title>
+    <title>Phone Number Validator</title>
 </head>
 <body>
+    <div class="phone-container">
+        <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <form>
+                <label for="user-input">Enter a Phone Number</label>
+                <input id="user-input" type="number">
+            </form>
+            <div id="results-div"></div>
+            <div class="phone-buttons">
+                <button type="button" id="check-btn" value="">Check</button>
+                <button type="button" id="clear-btn" value="">Clear</button>
+            </div>
+        </div>
+    </div>
     <script src="phoneNumberValidator.js"></script>
 </body>
 </html>
