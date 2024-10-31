@@ -9,6 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: 1em;
     background: #e8e6e6;
 }
 .phone-container {
@@ -89,4 +90,24 @@ form {
 }
 #check-btn:hover, #clear-btn:hover {
     transform: translateY(-3px);
+}
+.stack-container {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1em;
+}
+.stack-container p {
+    font-weight: lighter;
+    font-size: .8em;
+}
+.icon-container {
+    max-width: 40%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.icon {
+    font-size: 1.5em;
 }
