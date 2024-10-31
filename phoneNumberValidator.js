@@ -2,19 +2,25 @@ const userInput = document.getElementById("user-input");
 const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const result = document.getElementById("results-div");
-const phoneRegex = /^1?[-\s]?(\(?\d{3}\)?)[-\s]?\d{3}[-\s]?\d{4}$/;
+const phoneRegex = /^1?[-\s]?(\(\d{3}\)|\d{3})[-\s]?\d{3}[-\s]?\d{4}$/;
 
 const checkNumber = input => phoneRegex.test(input);
 
 const updateUi = input => {
-    result.innerHTML += `<p>${checkNumber(input) ? "Valid" : "Invalid"} US number: ${input}</p>`;
+    if (input === "") {
+        alert("Please provide a phone number");
+        return;
+    }
+    const resultParagraph = document.createElement("p");
+    resultParagraph.innerText = `${checkNumber(input) ? "Valid" : "Invalid"} US number: ${input}`;
+    result.appendChild(resultParagraph);
 }
 checkBtn.addEventListener("click", () => {
     updateUi(userInput.value);
     userInput.value = "";
 });
 clearBtn.addEventListener("click", () => {
-    result.innerText = "";
+    result.innerHTML = "";
 });
 userInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
